@@ -38,8 +38,6 @@ func (m model) Init() tea.Cmd {
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
-	// var docStyle = lipgloss.NewStyle().Margin(1,2).BorderStyle(lipgloss.NormalBorder()).BorderForeground(lipgloss.Color("63"))
-
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
 		m.width = msg.Width
@@ -122,7 +120,7 @@ func main() {
 	p := tea.NewProgram(model)
 
 	if _, err := p.Run(); err != nil {
-		fmt.Printf("some error: %v", err)
+		fmt.Printf("error: %v", err)
 		os.Exit(1)
 	}
 }
